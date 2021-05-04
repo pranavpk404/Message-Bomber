@@ -1,7 +1,9 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from ttkthemes import ThemedStyle
-from tkinter import *
+from tkinter import StringVar
+from pyautogui import typewrite
+from time import sleep
 
 root = tk.Tk()
 style = ThemedStyle(root)
@@ -15,13 +17,12 @@ root.config(bg="black")
 def brain():
 
     x = int(Times.get())
-    import pyautogui
-    from time import sleep
+
     sleep(2)
     while True:
-        pyautogui.typewrite(message.get())
+        typewrite(message.get())
         sleep(.600)
-        pyautogui.typewrite("\n")
+        typewrite("\n")
 
         x = x - 1
 
