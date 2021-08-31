@@ -28,8 +28,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 break
 
 
-
-
 if __name__ == '__main__':
     app = QApplication([])
     window = MainWindow()
