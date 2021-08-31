@@ -7,30 +7,27 @@ from time import sleep
 
 root = tk.Tk()
 style = ThemedStyle(root)
-style.set_theme("black")
+style.set_theme("ubuntu")
 root.geometry("500x120")
 root.wm_iconbitmap("icon.ico")
 root.resizable(False, False)
 root.title("Message Bomber")
-root.config(bg="black")
+root.config(bg="white")
+
 
 def brain():
-
     x = int(Times.get())
-
     sleep(2)
     while True:
         typewrite(message.get())
         sleep(.600)
         typewrite("\n")
-
         x = x - 1
-
         if x == 0:
             break
 
 
-def Widgets():
+def widgets():
     ttk.Label(root, text="message :").grid(row=1, column=0, pady=5, padx=5)
     ttk.Entry(root, width=55, textvariable=message).grid(row=1, column=1, pady=5, padx=5, columnspan=2)
     ttk.Label(root, text="times :").grid(row=2, column=0, pady=5, padx=5)
@@ -40,5 +37,5 @@ def Widgets():
 
 message = StringVar()
 Times = StringVar()
-Widgets()
+widgets()
 root.mainloop()
